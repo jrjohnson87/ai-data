@@ -8,6 +8,10 @@ on:
 permissions:
   contents: read
 
+env:
+  HCP_CLIENT_ID: ${{ secrets.HCP_CLIENT_ID }}
+  HCP_CLIENT_SECRET: ${{ secrets.HCP_CLIENT_SECRET }}
+
 jobs:
   terraform:
     name: 'Terraform'
@@ -35,7 +39,7 @@ jobs:
           dirname=`dirname "$fname"`
           foldername=`basename "$dirname"`
           filename=`basename "$fname"`
-          cp "${dirname}/$filename" "./${filename}.md"
+          cp "${dirname}/$filename" "./${filename}"
         done
 
     - name: Terraform Init
