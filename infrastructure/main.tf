@@ -3,7 +3,7 @@ locals {
 }
 
 resource "azurerm_resource_group" "default" {
-  name     = "${var.project_name}-cognitivie-services-rgp"
+  name     = "${var.project_name}-cognitive-services-rgp"
   location = var.azure_region
 }
 
